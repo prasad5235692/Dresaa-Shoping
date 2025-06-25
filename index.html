@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <style>
+        @import url('http://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;888;900&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    scroll-behavior: smooth;
+    font-family: 'Spartan',sans-serif;
+    size: 30%;
+}
+h1
+{
+    font-size: 50px;
+    line-height: 64px;
+    color:#222;
+}
+h2{
+    font-size: 40px;
+    line-height: 54px;
+    color: #222;
+}
+h4{
+    font-size: 20px;
+    color: #222;
+}
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+button.normal
+{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+button.white
+{
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    padding: 11px 18px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #FFF;
+    outline: none;
+    transition: 0.2s;
+}
+
+body{
+     background-size: cover;
+}
+.section-p1
+{
+    padding:48px 80px ;
+}
+.section-m1
+{
+    margin: 20px 0;
+}
+#header
+{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding:10px 50px;/* 10 px top and bottom, 50px left and right */
+    background-color: #e3e6f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+}
+.logo
+{
+width: 5%;
+object-fit: contain;
+
+}
+#navbar
+{
+    padding-right: 20px;/* Adjest the navbar padding*/
+    gap:30px;
+    display: flex;
+    justify-content: space-between;
+    size-adjust: 20px;
+    
+}
+#navbar li
+{
+    
+    list-style: none;
+    padding: 0 20px;/* Adjest the list 0 is top and bottom,20px is left and right */
+    font-size: 15px;
+    font-weight: 700;
+
+}
+#navbar li a
+{
+    position: relative;/*parent poition element*/
+    text-decoration: none;
+    font-size: 13px;
+    color:#1a1a1a;
+    transition: 0.3s ease;
+}
+
+/* Navigation bar*/
+
+#navbar li a:hover,
+#navbar li a.active
+{
+    color:#ff9f0d;
+}
+
+/* Navigation bar underline effect */
+#navbar a::before
+{
+   content: '';
+    position: absolute;/*  children of a relationally position*/
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color:black;   
+    transform: scaleX(0);
+    transition: all .5s;
+}
+#navbar li a.active::before,
+#navbar a:hover::before
+{
+    width:100%;
+    right: 0;
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+/* Hero Section */
+
+#hero
+{ 
+      background-color: rgb(206, 204, 204) ;
+    position: relative;
+   background-image: url('../Home/5.png');
+    height: 90vh;/* Adjet the height*/
+    width:100%;
+    background-size: cover;
+    background-position: top 85%  left 380px;
+    padding: 0 left 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+#hero h4
+{
+    padding-left: 50px;
+    padding-bottom: 15px;
+}
+#hero h1
+{
+    color: #ff9f0d;
+    padding-left: 50px;
+}
+#hero h2{
+    padding-left: 50px;
+}
+
+#hero p{
+    padding-left: 50px;
+    
+}
+/*button*/
+#hero button{ 
+    margin-left: 80px;
+    padding:15px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+
+}
+#hero button::after
+{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left:0;
+    top: 0;
+    border-radius: 10px;
+}
+#hero button:hover::before{
+    content: "";
+    background: linear-gradient(45deg,#FF0000,#FF7300,#FFFB00,#48FF00,#00FFD5,#002BFF,#FF00CB,#FF0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+@keyframes glowing
+{
+    0%{ background-position: 0 0;}
+    50% { background-position:400% 0;}
+    100% {background-position: 0 0;}
+}
+#hero button:hover::before
+{
+    opacity: 1;
+}
+#hero button:active::after
+{
+    background: transparent;
+}
+#hero button:active
+{
+   color:#000;
+   font-weight: bold;
+}
+#feature 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#feature .fe-box
+{ 
+    position: relative;
+    width: 180px;
+    text-align: center;
+    padding: 20px 15px;
+    box-shadow: 20px 20px 34px rgba(0,0,0,0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+}
+#feature .fe-box:hover
+{
+    box-shadow: 20px 20px 64px rgba(0,62,221,0.1);
+}
+#feature .fe-box img
+{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 40%;
+}
+
+#feature .fe-box h6{
+    padding: 9px 8px 6px 8px; /* top left bottom right */
+    line-height: 1;
+    border-radius: 4px;
+    color:#088178;
+    background-color: #fddde4;
+
+}
+#feature .fe-box:nth-child(2) h6{
+    background-color: #cdebbc;
+}
+
+#feature .fe-box:nth-child(3) h6{
+    background-color: #d1e8f2;
+}
+
+#feature .fe-box:nth-child(4) h6{
+    background-color: #cdd4f8;
+}
+
+#feature .fe-box:nth-child(5) h6{
+    background-color: #fff2e5;
+}
+#product1
+{
+    text-align: center;
+    margin-top: 75px;
+}
+#prodect1 h2
+{
+    font-size: 50px;
+}
+#product1 .pro-container
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+#product1 .pro
+{
+    position: relative;
+    width: 10%;
+    min-width: 200px;
+    padding: 10px 12px;
+    border: 2px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0,0,0.02);
+    margin: 35px 40px;
+    transition: 0.2s ease;
+}
+ .img{
+    width: 10%;
+    height: 60%;
+}
+#product1 .pro:hover
+{
+    box-shadow: 20px 20px 30px rgba(0, 0,0,0.06);
+}
+#product1 .pro img
+{
+    width: 100%;
+    border-radius:20px;
+}
+#product1 .pro .des{
+    text-align: start;
+    padding: 10px 0;
+}
+#product1 .pro .des span
+{
+   color: #606063; 
+   font-size: 12px;
+}
+#product1 .pro .des h5
+{
+   padding-top: 7px;
+   color: #1a1a1a;
+   font-size: 14px; 
+
+}
+#product1 .pro .des i{
+    font-size: 12px;
+    color: rgb(243, 181, 25);
+}
+#product1 .pro .des h4{
+    padding: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+#product1 .pro .cart
+
+{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+#banner
+{
+   display: flex;    
+   flex-direction: column;  
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   background-image:url("../Home/ban1.jpg");
+   width: 100%;
+   height: 40vh;
+   background-size: cover;
+   background-position: center;
+}
+#banner h4{
+    color: #241a1a;
+    font-size: 16px;
+
+}
+
+#banner h2{
+    color: #241a1a;
+    font-size: 30px;
+    padding: 10px 0;
+}
+
+#banner h2 span{
+    color: rgb(255, 123, 0);
+}
+#banner button
+{
+    padding:10px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#banner button:hover{
+    background-color: #088178;
+    color: #fff;
+    transition: 0.2s ease;
+    
+}
+#sm-banner
+{
+   display: flex;
+   justify-content:space-between;
+   flex-wrap:wrap;
+}   
+#sm-banner .banner-box
+{
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    background-image: url("../Home/ban6.jpg");
+    min-width: 450px;
+    height: 50vh;
+    background-size:cover;
+    background-position: top 10% left 10%;
+    padding: 25px;
+}
+#sm-banner h4
+{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+}
+#sm-banner h2
+{
+    color: #fff;
+    font-size: 28px;
+    font-weight: 900;
+}
+.img1{
+    width: 50%;
+    height: 30%;
+}
+#sm-banner span
+{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+#sm-banner .banner-box2
+{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    background-image: url("../Home/ban7.jpg");
+    min-width: 450px;
+    height: 50vh;
+    background-size:cover;
+    background-position: top center;
+    padding: 25px;
+}
+#sm-banner .banner-box:hover button
+{
+    background-color: #088178;
+    border: 1px solid #088178;
+}
+#sm-banner .banner-box2:hover button
+{
+    background-color: #088178;
+    border: 1px solid #088178;
+}
+#banner3
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+}
+#banner3 .banner-box
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("../Home/ban2.jpg");
+    min-width: 29%;
+    height: 30vh;
+    background-size:cover;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#banner3 .banner-box:hover
+{
+    transform: scale(1.05);
+    transition:0.8s ease;
+}
+#banner3 h2{
+    color: #fff;
+    font-weight: 900;
+    font-size:22px;
+}
+#banner3 h3{
+    color: #ec544e;
+    font-weight: 800;
+    font-size:15px;
+}
+#newsletter
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url(../Home/img/6.jpg);
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #041e42;
+}
+#newsletter h4{
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff;
+}
+#newsletter p{
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+}
+#newsletter p span{
+    color: #fc0026;
+}
+#newsletter .form{
+    display: flex;
+    width: 40%;
+}
+#newsletter input{
+    height: 3.125rem;
+    padding: 0.1.25em;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline:none;
+    border-top-right-radius:0 ;
+    border-bottom-right-radius: 0;
+}
+#newsletter button{
+    background-color: #088178;
+    color: #fff;
+    white-space: nowrap;
+    border-top-left-radius:0 ;
+    border-bottom-left-radius: 0;
+}
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer .co1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+footer .logo{
+    width: 30%;
+    margin-bottom: 30px;
+}
+footer h4{
+    font-size:  14px;
+    padding-bottom: 20px;
+}
+footer p{
+    font-size:  13px;
+    margin: 0 0 8px 0;
+}
+footer a{
+    font-size:  13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+} 
+footer .follow{
+    margin-top: 20px;
+}
+footer .follow i{
+    color: #465b52;
+    padding-right:4px ;
+    cursor: pointer;
+}
+footer .install .row img{
+    border: 1px solid #088178;
+    border-radius: 10px;
+} 
+footer .install .row .ins{
+    width: 100px;
+    height: auto;
+}
+footer .install img{
+    width: 200px;
+    height: auto;
+    margin: 0 0 15px 0;
+}
+
+footer .follow i:hover,
+footer a:hover{
+color: #088178;
+}
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> Dresaa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    </head>
+    <body>
+        <div id="header">
+            <img src="g:/full stack/ecom/home/img/2.png" class="logo" alt="">
+        <ul id="navbar">
+            <li><a class="active" href="../Home/home.html">Home</a></li>
+            <li><a href="../shop/shop.html">Shop</a></li>
+            <li><a href="../about/about.html">About</a></li>
+            <li><a href="../Contact/Contact.html">Contact</li>
+            <li><a href="../cart/cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a href="../login/login.html"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+        </ul>
+            </div>
+        <div id="hero">
+            <h4>Trade-in-offer</h4>
+            <h2>Welcome To Dresaa</h2>
+            <h1>Enjoy Shoping</h1>
+            <p>Save more with coupons & up to 70% off!</p><br>
+            <button> shop now </button>
+        </div>
+        <section id="feature" class="section-p1">
+            <div class="fe-box">
+            <img src="../Home/10.png" alt="" width="150" height="150">
+            <h6>Online Shoping</h6>
+            </div>
+            <div class="fe-box">
+            <img src="../Home/11.png" alt="" width="150" height="150">
+            <h6>Tracking</h6>
+            </div>
+            <div class="fe-box">
+            <img src="../Home/13.png" alt="" width="150" height="150">
+            <h6>Your pick Shop</h6>
+            </div>
+            <div class="fe-box">
+            <img src="../Home/14.png" alt="" width="150" height="150">
+            <h6>Fast Delivery</h6>
+            </div>
+            <div class="fe-box">
+            <img src="../Home/15.png" alt="" width="150" height="150">
+            <h6>Home Delivery</h6>
+            </div>
+        </section>
+        <section id="product1" class="selection-p1">
+        <h2>Featured Products</h2>    
+        <p>Summer Collection New Mordern Design</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="../Home/p1.webp" alt="" class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Brown color Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹480</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p2.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Orange color Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹350</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p3.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Pink Bird Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹499</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p4.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Black And White Shade Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹399</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p5.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Colorfull printed Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹459</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p6.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>plain color Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹378</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p7.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Black and white  Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹467</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+                
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p8.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Howoiii  Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹563</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+
+
+        </div>
+        </section>
+        <section id="banner" class="section-m1"class="img">
+            <h4>New Trend</h4>
+            <h2> Up to<span> 70% Off</span> All Shirts & Acceories</h2>
+            <button>Explore Now</button>
+        </section>
+        <section id="product1" class="selection-p1">
+        <h2>New Collections</h2>    
+        <p>Summer Collection New Mordern Design</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="../Home/p1.webp" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Brown color Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹480</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p2.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Orange color Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹350</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p3.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Pink Bird Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹499</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p4.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Black And White Shade Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹399</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p5.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Colorfull printed Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹459</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p6.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>plain color Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹378</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p7.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Black and white  Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹467</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+                
+        
+            
+            </div>
+            <div class="pro">
+                <img src="../Home/p8.webp" alt=""class="img">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Howoiii  Fit Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>₹563</h4>
+                </div>
+                <div class="cart">
+                    <a href="#"><i class="fa-solid fa-cart-shopping" style="color:#088178;"></i></a>
+                </div>
+        
+            
+            </div>
+
+
+        </div>
+        </section>
+     <section id="sm-banner" class="section-p1">
+        <div class="banner-box">
+            <h4>Big Sale</h4>
+            <h2>Buy 1 Get 1 Free</h2>
+            <p>best Choose Collection Close</p>
+            <br>
+            <button class="white"> Learn More</button>
+        </div>
+        <div class="banner-box2">
+            <h4>Dress</h4>
+            <h2>New Collection</h2>
+            <p>New Dres New Begineng</p><br>
+            <button class="white"> collection</button>
+        </div>
+     </section>
+     <section id="banner3">
+        <div class="banner-box">
+            <h2> SEASONAL SALE</h2>
+            <h3>Winter Collection- 50% Off</h3>
+        </div>
+        <div class="banner-box">
+            <h2> SEASONAL SALE</h2>
+            <h3>Winter Collection- 50% Off</h3>
+        </div>
+        <div class="banner-box">
+            <h2> SEASONAL SALE</h2>
+            <h3>Winter Collection- 50% Off</h3>
+        </div>
+
+     </section>
+     <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletter</h4>
+            <p>Get E-mail Updates about our latest shop and <span>special offers</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign Up</button>
+        </div>
+     </section>
+     <footer class="section-p1">
+        <div class="co1">
+           <img class="logo" src="../Home/2.png" alt="">
+           <h4>Contact</h4>
+           <p> <strong>Address:</strong> Roseland,Pudukkottai-622501</p>
+           <p> <strong>Phone:</strong> (+91) 987654321</p>
+           <p> <strong>Hour:</strong> 10:00 - 18:00, Mon - Sat</p>
+           <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+                <i class="fab fa-facebool-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+           </div>
+        </div>
+        <div class="co1">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="co1">
+            <h4>Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="co1 install">
+             <h4>install App</h4>
+             <p> From App Store or Google Play</p>
+            <div class="row">
+               <img src="../Home/google.png" alt="" class="ins">
+                <img src="../Home/app.png" alt="" class="ins">
+            </div>
+        
+          <p>Secure Payment Gateway</p>
+          <img src="../Home/pay1.png" alt="" class="pay">
+         
+        </div>
+          <div class="copyright">
+             <p>@ 2021,Tech2 etc -HTML CSS E-Commerce Template</p>
+          </div>
+     </footer>
+    </body>
+</html>
